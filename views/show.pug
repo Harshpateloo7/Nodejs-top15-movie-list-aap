@@ -1,0 +1,15 @@
+extends layout 
+block main-content 
+    h1.page-title Top 15 Shows
+    table#table
+      thead 
+        tr
+          th Title
+          th Year
+      tbody 
+        each s in show
+          tr 
+            td 
+              - url = `https://imdb.com/title/${s.ids.imdb}`; // The show title display the show title as link and link point to the IMDB show
+              a(href=url) #{s.title}   
+            td #{s.year} 

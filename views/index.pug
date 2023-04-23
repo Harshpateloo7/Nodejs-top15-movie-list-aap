@@ -1,0 +1,10 @@
+extends layout 
+block main-content 
+  //You can overwrite the main-content block by writing block content
+  //in the template file which is extending.
+  h1.page-title Top 15 Movies
+  ul 
+    each m in movies 
+      li 
+        - url = `/movie-info?id=${m.movie.ids.imdb}`;
+        a(href=url) #{m.movie.title} (#{m.movie.year})
